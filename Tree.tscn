@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://do2muqbuu3mpb"]
+
+[ext_resource type="Texture2D" uid="uid://c7qjv6us1i3el" path="res://PixelPlat/Tiles/tile_0126.png" id="1_hmn66"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y7ulw"]
+radius = 13.0384
+
+[node name="Tree" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_y7ulw")
+
+[node name="Tile0126" type="Sprite2D" parent="."]
+position = Vector2(0, -45)
+scale = Vector2(4.72222, 6.27778)
+texture = ExtResource("1_hmn66")

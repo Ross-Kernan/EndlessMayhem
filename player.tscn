@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1ituvdltnpth"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_kxynr"]
+[ext_resource type="Texture2D" uid="uid://dausingi4xbl5" path="res://PixelPlat/Tiles/Characters/tile_0000.png" id="2_cwi1g"]
+
+[sub_resource type="Curve2D" id="Curve2D_xg5l1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -5.44957e-07, -14.2857, 0, 0, 0, 0, 12.5714, -10.2857, 0, 0, 0, 0, 12.5714, 8, 0, 0, 0, 0, -5.44957e-07, 15.4286, 0, 0, 0, 0, -13.1429, 8, 0, 0, 0, 0, -13.7143, -8.57143, 0, 0, 0, 0, -5.44957e-07, -14.2857)
+}
+point_count = 7
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1fgl2"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dd8di"]
+radius = 20.0
+
+[node name="player" type="CharacterBody2D"]
+collision_layer = 128
+script = ExtResource("1_kxynr")
+
+[node name="Path2d" type="Path2D" parent="."]
+position = Vector2(9.53674e-07, 4.76837e-07)
+scale = Vector2(1.75, 1.75)
+curve = SubResource("Curve2D_xg5l1")
+
+[node name="PlayerGuns" type="PathFollow2D" parent="Path2d"]
+unique_name_in_owner = true
+position = Vector2(-5.44957e-07, -14.2857)
+rotation = 0.308053
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="."]
+visibility_layer = 2
+z_index = 1
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_1fgl2")
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 4.76837e-07)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("2_cwi1g")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="HurtBox" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_dd8di")
+debug_color = Color(0.92549, 0.247059, 0.298039, 0.419608)
+
+[connection signal="ready" from="Path2d/PlayerGuns" to="." method="_on_player_guns_ready"]

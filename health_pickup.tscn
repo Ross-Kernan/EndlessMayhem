@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b55r7m8etbb5n"]
+
+[ext_resource type="Texture2D" uid="uid://dg5uh41gnwmt2" path="res://PixelPlat/Tiles/tile_0044.png" id="1_2sw44"]
+[ext_resource type="Script" path="res://health_pickup.gd" id="1_a7r16"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mm68u"]
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 128
+collision_mask = 128
+script = ExtResource("1_a7r16")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("1_2sw44")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 0
+visibility_layer = 2
+z_index = 13
+shape = SubResource("CircleShape2D_mm68u")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

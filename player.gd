@@ -3,10 +3,10 @@ extends CharacterBody2D
 
 var MAX_HEALTH = 100
 var health = MAX_HEALTH
+var SPEED = 350
 
 const DAMAGE_RATE = 5.0
 const HEALTH_REGEN = 1.0
-var SPEED = 350
 
 signal health_depleted
 
@@ -48,7 +48,7 @@ func _on_timer_timeout():
 	
 
 
-	
+
 
 
 

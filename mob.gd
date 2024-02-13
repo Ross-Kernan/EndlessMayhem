@@ -21,7 +21,7 @@ func take_damage():
 	health -= 1
 	
 	if health == 0:
-		queue_free()
 		drop_health()
+		queue_free()
 
 	

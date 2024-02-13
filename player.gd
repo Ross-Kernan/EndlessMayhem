@@ -1,23 +1,55 @@
 extends CharacterBody2D
 
+
+var MAX_HEALTH = 100
+var health = MAX_HEALTH
+
+const DAMAGE_RATE = 5.0
+const HEALTH_REGEN = 1.0
+var SPEED = 350
+
 signal health_depleted
 
-@export var SPEED = 120
 
-var health = 100.0
 
-func _physics_process(delta):
+
+func _ready():
+	GunSlot1()
+	GunSlot2()
+	GunSlot3()
+	GunSlot4()
+	GunSlot5()
+
+
+
+func _physics_process(_delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	velocity = direction * 600
+	velocity = direction * SPEED
 	move_and_slide()
-
-	const DAMAGE_RATE = 5.0
+	%HealthBar.value = health
+	
+	
+	
 	var overlapping_mobs = %HurtBox.get_overlapping_bodies()
 	if overlapping_mobs.size() > 0:
-		health -= DAMAGE_RATE * overlapping_mobs.size() * delta
-		%ProgressBar.value = health
+		health -= DAMAGE_RATE * overlapping_mobs.size() * _delta
 		if health <= 0.0:
 			health_depleted.emit()
+
+
+func health_regen():
+	if health < MAX_HEALTH:
+		health += HEALTH_REGEN
+	elif health > MAX_HEALTH:
+		health = MAX_HEALTH
+
+func _on_timer_timeout():
+	health_regen()
+	
+
+
+	
+
 
 
 func GunSlot1():
@@ -49,12 +81,6 @@ func GunSlot5():
 	%PlayerGuns.progress_ratio = .8
 	StarterGun.global_position = %PlayerGuns.global_position
 	add_child(StarterGun)
-	
-func _ready():
-	GunSlot1()
-	GunSlot2()
-	GunSlot3()
-	GunSlot4()
-	GunSlot5()
+
 
 

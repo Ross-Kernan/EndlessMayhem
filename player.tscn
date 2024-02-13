@@ -66,7 +66,7 @@ position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_dd8di")
 debug_color = Color(0.92549, 0.247059, 0.298039, 0.419608)
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="HealthBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
 offset_left = -31.0
 offset_top = -40.0
@@ -77,5 +77,10 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_kpqrb")
 value = 100.0
 show_percentage = false
 
+[node name="RegenTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
 [connection signal="health_depleted" from="." to="." method="_on_health_depleted"]
 [connection signal="ready" from="Path2d/PlayerGuns" to="." method="_on_player_guns_ready"]
+[connection signal="timeout" from="RegenTimer" to="." method="_on_timer_timeout"]

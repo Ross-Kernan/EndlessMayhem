@@ -5,8 +5,6 @@ var health = 3
 @onready var player = get_node("/root/Game/player")
 
 
-func _ready():
-	pass
 
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)

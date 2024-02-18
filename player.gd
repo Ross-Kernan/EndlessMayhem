@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-var MAX_HEALTH = 1
+var MAX_HEALTH = 1.0
 var health = MAX_HEALTH
 var SPEED = 350
 
@@ -27,6 +27,7 @@ func _physics_process(_delta):
 	velocity = direction * SPEED
 	move_and_slide()
 	%HealthBar.value = health
+	#pause_game()
 	
 	
 	
@@ -47,6 +48,9 @@ func _on_timer_timeout():
 	health_regen()
 	
 
+#func pause_game():
+	#if Input.is_action_just_pressed("pause_game"):
+		#get_tree().change_scene_to_file("res://test.tscn")
 
 
 

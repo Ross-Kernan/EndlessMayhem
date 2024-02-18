@@ -7,12 +7,17 @@ func spawn_mob():
 	add_child(robot)
 
 
-
-
 func _on_timer_timeout():
 	spawn_mob()
 	
 
+
 func _on_player_health_depleted():
-	%GameOver.visible = true
+	%GameOver.set_visible(true)
 	get_tree().paused = true
+
+
+func _on_button_pressed():
+	%GameOver.set_visible(false)
+	#get_tree().set_ = false
+	get_tree().reload_current_scene()

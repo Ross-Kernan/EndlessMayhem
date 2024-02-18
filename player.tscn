@@ -83,6 +83,5 @@ show_percentage = false
 wait_time = 3.0
 autostart = true
 
-[connection signal="health_depleted" from="." to="." method="_on_health_depleted"]
 [connection signal="ready" from="Path2d/PlayerGuns" to="." method="_on_player_guns_ready"]
 [connection signal="timeout" from="RegenTimer" to="." method="_on_timer_timeout"]

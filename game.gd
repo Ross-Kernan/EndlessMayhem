@@ -13,3 +13,6 @@ func _on_timer_timeout():
 	spawn_mob()
 	
 
+func _on_player_health_depleted():
+	%GameOver.visible = true
+	get_tree().paused = true

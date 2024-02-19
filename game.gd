@@ -9,11 +9,8 @@ func spawn_mob():
 	robot.position = Vector2(randf_range(-100, 2000), randf_range(-100, 1000))
 	add_child(robot)
 
-
 func _on_timer_timeout():
 	spawn_mob()
-	
-
 
 func _on_player_health_depleted():
 	get_tree().change_scene_to_file("res://gameover.tscn")

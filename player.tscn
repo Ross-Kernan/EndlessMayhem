@@ -83,5 +83,13 @@ show_percentage = false
 wait_time = 3.0
 autostart = true
 
+[node name="Label" type="Label" parent="."]
+offset_left = -573.0
+offset_top = -320.0
+offset_right = -467.0
+offset_bottom = -249.0
+size_flags_horizontal = 4
+text = "Tezt"
+
 [connection signal="ready" from="Path2d/PlayerGuns" to="." method="_on_player_guns_ready"]
 [connection signal="timeout" from="RegenTimer" to="." method="_on_timer_timeout"]

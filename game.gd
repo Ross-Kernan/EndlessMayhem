@@ -1,5 +1,8 @@
 extends Node2D
 
+#func _ready():
+	#process_mode = Node.PROCESS_MODE_PAUSABLE
+
 
 func spawn_mob():
 	var robot = preload("res://mob.tscn").instantiate()
@@ -13,11 +16,9 @@ func _on_timer_timeout():
 
 
 func _on_player_health_depleted():
-	%GameOver.set_visible(true)
-	get_tree().paused = true
+	get_tree().change_scene_to_file("res://gameover.tscn")
 
 
-func _on_button_pressed():
-	%GameOver.set_visible(false)
-	#get_tree().set_ = false
+func _on_button_pressed(player):
+	%GameOver.hide()
 	get_tree().reload_current_scene()

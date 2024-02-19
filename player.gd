@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-var MAX_HEALTH = 1.0
+var MAX_HEALTH = 100.0
 var health = MAX_HEALTH
 var SPEED = 350
 
@@ -35,6 +35,7 @@ func _physics_process(_delta):
 	if overlapping_mobs.size() > 0:
 		health -= DAMAGE_RATE * overlapping_mobs.size() * _delta
 		if health <= 0.0:
+			#health = MAX_HEALTH
 			health_depleted.emit()
 
 

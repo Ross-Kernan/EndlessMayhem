@@ -19,4 +19,6 @@ func shoot():
 
 
 func _on_timer_timeout():
+	# timer currently set to 0.3
+	# only change for testing purposes
 	shoot()

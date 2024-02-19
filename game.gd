@@ -18,7 +18,3 @@ func _on_timer_timeout():
 func _on_player_health_depleted():
 	get_tree().change_scene_to_file("res://gameover.tscn")
 
-
-func _on_button_pressed(player):
-	%GameOver.hide()
-	get_tree().reload_current_scene()

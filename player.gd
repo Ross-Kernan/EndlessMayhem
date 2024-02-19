@@ -27,7 +27,6 @@ func _physics_process(_delta):
 	velocity = direction * SPEED
 	move_and_slide()
 	%HealthBar.value = health
-	#pause_game()
 	
 	
 	
@@ -35,7 +34,6 @@ func _physics_process(_delta):
 	if overlapping_mobs.size() > 0:
 		health -= DAMAGE_RATE * overlapping_mobs.size() * _delta
 		if health <= 0.0:
-			#health = MAX_HEALTH
 			health_depleted.emit()
 
 

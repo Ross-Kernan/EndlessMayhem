@@ -9,7 +9,7 @@ func _physics_process(_delta):
 	var direction = global_position.direction_to(player.global_position)
 	velocity = direction * 100.0
 	move_and_slide()
-	
+
 
 func drop_health():
 	const HDROP = preload("res://health_pickup.tscn")
@@ -23,5 +23,3 @@ func take_damage():
 	if health == 0:
 		drop_health()
 		queue_free()
-
-	

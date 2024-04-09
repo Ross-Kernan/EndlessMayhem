@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1ituvdltnpth"]
+[gd_scene load_steps=10 format=3 uid="uid://c1ituvdltnpth"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_kxynr"]
 [ext_resource type="Texture2D" uid="uid://dausingi4xbl5" path="res://PixelPlat/Tiles/Characters/tile_0000.png" id="2_cwi1g"]
+[ext_resource type="Script" path="res://money.gd" id="3_ism5b"]
 
 [sub_resource type="Curve2D" id="Curve2D_xg5l1"]
 _data = {
@@ -28,6 +29,8 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_qnnlf"]
 
 [node name="player" type="CharacterBody2D"]
 collision_layer = 128
@@ -83,13 +86,15 @@ show_percentage = false
 wait_time = 3.0
 autostart = true
 
-[node name="Label" type="Label" parent="."]
+[node name="Money" type="Label" parent="."]
+unique_name_in_owner = true
 offset_left = -573.0
 offset_top = -320.0
 offset_right = -467.0
 offset_bottom = -249.0
 size_flags_horizontal = 4
-text = "Tezt"
+label_settings = SubResource("LabelSettings_qnnlf")
+script = ExtResource("3_ism5b")
 
 [connection signal="ready" from="Path2d/PlayerGuns" to="." method="_on_player_guns_ready"]
 [connection signal="timeout" from="RegenTimer" to="." method="_on_timer_timeout"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1ituvdltnpth"]
+[gd_scene load_steps=9 format=3 uid="uid://c1ituvdltnpth"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_kxynr"]
 [ext_resource type="Texture2D" uid="uid://dausingi4xbl5" path="res://PixelPlat/Tiles/Characters/tile_0000.png" id="2_cwi1g"]
+[ext_resource type="Script" path="res://Money.gd" id="3_ujwqt"]
 
 [sub_resource type="Curve2D" id="Curve2D_xg5l1"]
 _data = {
@@ -78,21 +79,21 @@ theme_override_styles/background = SubResource("StyleBoxFlat_tgtfk")
 theme_override_styles/fill = SubResource("StyleBoxFlat_kpqrb")
 value = 100.0
 show_percentage = false
-metadata/_edit_use_anchors_ = true
-
-[node name="Money" type="Label" parent="."]
-unique_name_in_owner = true
-top_level = true
-anchors_preset = -1
-offset_left = -554.0
-offset_top = -302.0
-offset_right = -444.0
-offset_bottom = -279.0
-metadata/_edit_use_anchors_ = true
 
 [node name="RegenTimer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Money" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -466.0
+offset_bottom = -301.0
+text = "Money: "
+script = ExtResource("3_ujwqt")
 
 [connection signal="ready" from="Path2d/PlayerGuns" to="." method="_on_player_guns_ready"]
 [connection signal="timeout" from="RegenTimer" to="." method="_on_timer_timeout"]

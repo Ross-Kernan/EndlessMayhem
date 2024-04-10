@@ -21,5 +21,6 @@ func take_damage():
 	health -= 1
 	
 	if health == 0:
+		player.SCORE += 1
 		drop_health()
 		queue_free()

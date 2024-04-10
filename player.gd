@@ -4,6 +4,8 @@ extends CharacterBody2D
 var MAX_HEALTH = 100.0
 var health = MAX_HEALTH
 var SPEED = 350
+var MONEY = 0
+var SCORE = 0
 
 const DAMAGE_RATE = 5.0
 const HEALTH_REGEN = 1.0
@@ -19,6 +21,7 @@ func _ready():
 	GunSlot3()
 	GunSlot4()
 	GunSlot5()
+	#player_upgrades():
 
 
 func _physics_process(_delta):
@@ -26,7 +29,12 @@ func _physics_process(_delta):
 	velocity = direction * SPEED
 	move_and_slide()
 	%HealthBar.value = health
+	%Money.text = "Money: " + str(MONEY)
 	
+	if Input.is_action_pressed("+speed"):
+		SPEED += 5
+		#get_tree().change_scene_to_file("res://shop.tscn")
+		#get_tree().reload_current_scene()
 	
 	
 	var overlapping_mobs = %HurtBox.get_overlapping_bodies()
@@ -35,6 +43,10 @@ func _physics_process(_delta):
 		if health <= 0.0:
 			health_depleted.emit()
 
+
+#func player_upgrades():
+	#if Input.is_action_pressed("+speed"):
+		#SPEED = SPEED + 10
 
 func health_regen():
 	if health < MAX_HEALTH:

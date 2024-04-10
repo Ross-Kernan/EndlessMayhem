@@ -29,7 +29,6 @@ func _physics_process(_delta):
 	velocity = direction * SPEED
 	move_and_slide()
 	%HealthBar.value = health
-	%Money.text = "Money: " + str(MONEY)
 	
 	if Input.is_action_pressed("+speed"):
 		SPEED += 5

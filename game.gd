@@ -1,8 +1,14 @@
 extends Node2D
 
+@onready var player = get_node("/root/Game/player")
+
+
 #func _ready():
 	#process_mode = Node.PROCESS_MODE_PAUSABLE
 
+
+func _physics_process(_delta):
+	%Money.text = "Money: " + str(player.MONEY)
 
 func spawn_mob():
 	var robot = preload("res://mob.tscn").instantiate()

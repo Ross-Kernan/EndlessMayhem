@@ -80,6 +80,16 @@ value = 100.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
 
+[node name="Money" type="Label" parent="."]
+unique_name_in_owner = true
+top_level = true
+anchors_preset = -1
+offset_left = -563.0
+offset_top = -309.0
+offset_right = -453.0
+offset_bottom = -286.0
+metadata/_edit_use_anchors_ = true
+
 [node name="RegenTimer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true

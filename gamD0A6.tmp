@@ -94,10 +94,10 @@ position = Vector2(1029, 336)
 
 [node name="Money" type="Label" parent="player"]
 unique_name_in_owner = true
-offset_left = -576.0
-offset_top = -324.0
-offset_right = -486.0
-offset_bottom = -276.0
+offset_left = -555.0
+offset_top = -310.0
+offset_right = -515.0
+offset_bottom = -287.0
 
 [node name="WallTB" parent="." instance=ExtResource("5_304eq")]
 position = Vector2(-107, -96)

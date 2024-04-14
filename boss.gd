@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var health = 500
+var health = 300
 
 @onready var player = get_node("/root/Game/player")
 

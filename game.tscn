@@ -94,10 +94,11 @@ position = Vector2(1029, 336)
 
 [node name="Money" type="Label" parent="player"]
 unique_name_in_owner = true
-offset_left = -576.0
-offset_top = -324.0
-offset_right = -486.0
-offset_bottom = -276.0
+offset_left = -914.0
+offset_top = -504.0
+offset_right = -824.0
+offset_bottom = -456.0
+text = "Label"
 
 [node name="WallTB" parent="." instance=ExtResource("5_304eq")]
 position = Vector2(-107, -96)
@@ -120,18 +121,22 @@ collision_layer = 129
 collision_mask = 129
 
 [node name="Tree" parent="." instance=ExtResource("2_j3j0v")]
+z_index = -1
 position = Vector2(246, 364)
 
 [node name="Tree2" parent="." instance=ExtResource("2_j3j0v")]
+z_index = -1
 position = Vector2(403, 168)
 
 [node name="Tree3" parent="." instance=ExtResource("2_j3j0v")]
+z_index = -1
 position = Vector2(821, 268)
 
 [node name="Tree4" parent="." instance=ExtResource("2_j3j0v")]
 position = Vector2(844, 476)
 
 [node name="Tree5" parent="." instance=ExtResource("2_j3j0v")]
+z_index = -1
 position = Vector2(420, 479)
 
 [node name="MonsterSpawn" type="Timer" parent="."]

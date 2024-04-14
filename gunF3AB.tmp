@@ -5,19 +5,17 @@
 [sub_resource type="GDScript" id="GDScript_xpnty"]
 script/source = "extends Area2D
 
-func increase_fire_rate():
-	%FireRate.wait_time = %FireRate.wait_time - .0005
+#var FireRate = .3
 
 func _physics_process(_delta):
 	var enemies_in_range = get_overlapping_bodies()
 	if enemies_in_range.size() > 0:
 		var target_enemy = enemies_in_range[0]
 		look_at(target_enemy.global_position)
-		
-	if Input.is_action_pressed(\"+fire_rate\"):
-		increase_fire_rate()
 
 
+func _change_wait_time():
+	Timer.set_wait_time(.3)
 
 
 func shoot():
@@ -26,6 +24,8 @@ func shoot():
 	new_bullet.global_position = %ShootingPoint.global_position
 	new_bullet.global_rotation = %ShootingPoint.global_rotation
 	%ShootingPoint.add_child(new_bullet)
+
+
 
 
 func _on_timer_timeout():
@@ -59,8 +59,8 @@ position = Vector2(28.5671, -27.2216)
 rotation = -0.637878
 
 [node name="FireRate" type="Timer" parent="."]
-unique_name_in_owner = true
 wait_time = 0.3
 autostart = true
+script = SubResource("GDScript_xpnty")
 
 [connection signal="timeout" from="FireRate" to="." method="_on_timer_timeout"]

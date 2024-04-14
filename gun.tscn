@@ -5,8 +5,14 @@
 [sub_resource type="GDScript" id="GDScript_xpnty"]
 script/source = "extends Area2D
 
+
+@onready var player = get_node(\"/root/Game/player\")
+
+
 func increase_fire_rate():
-	%FireRate.wait_time = %FireRate.wait_time - .0005
+	%FireRate.wait_time -= .005
+	player.MONEY -= 1
+
 
 func _physics_process(_delta):
 	var enemies_in_range = get_overlapping_bodies()
@@ -14,7 +20,7 @@ func _physics_process(_delta):
 		var target_enemy = enemies_in_range[0]
 		look_at(target_enemy.global_position)
 		
-	if Input.is_action_pressed(\"+fire_rate\"):
+	if Input.is_action_just_pressed(\"+fire_rate\") && player.MONEY >= 5:
 		increase_fire_rate()
 
 

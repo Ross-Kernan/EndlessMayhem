@@ -29,10 +29,11 @@ func _physics_process(_delta):
 	move_and_slide()
 	%HealthBar.value = health
 	
-	if Input.is_action_pressed("+speed"):
-		SPEED += 5
-		#get_tree().change_scene_to_file("res://shop.tscn")
-		#get_tree().reload_current_scene()
+	if Input.is_action_just_pressed("+speed") && MONEY >= 5:
+		SPEED += 10
+		MONEY -= 5
+	elif Input.is_action_just_pressed("+money"):
+		MONEY += 9999
 	
 	
 	var overlapping_mobs = %HurtBox.get_overlapping_bodies()

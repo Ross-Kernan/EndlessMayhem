@@ -24,8 +24,6 @@ func _physics_process(_delta):
 		increase_fire_rate()
 
 
-
-
 func shoot():
 	const BULLET = preload(\"res://bullet.tscn\")
 	var new_bullet = BULLET.instantiate()
@@ -37,7 +35,6 @@ func shoot():
 func _on_timer_timeout():
 	shoot()
 	# timer currently set to 0.3
-	# only change for testing purposes
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g36ul"]

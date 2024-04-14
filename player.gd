@@ -12,15 +12,12 @@ const HEALTH_REGEN = 1.0
 signal health_depleted
 
 
-
-
 func _ready():
 	GunSlot1()
 	GunSlot2()
 	GunSlot3()
 	GunSlot4()
 	GunSlot5()
-	#player_upgrades():
 
 
 func _physics_process(_delta):
@@ -43,26 +40,16 @@ func _physics_process(_delta):
 			health_depleted.emit()
 
 
-#func player_upgrades():
-	#if Input.is_action_pressed("+speed"):
-		#SPEED = SPEED + 10
-
 func health_regen():
 	if health < MAX_HEALTH:
 		health += HEALTH_REGEN
 	elif health > MAX_HEALTH:
 		health = MAX_HEALTH
 
+
 func _on_timer_timeout():
 	health_regen()
 	
-
-#func pause_game():
-	#if Input.is_action_just_pressed("pause_game"):
-		#get_tree().change_scene_to_file("res://test.tscn")
-
-
-
 
 
 func GunSlot1():
@@ -71,11 +58,13 @@ func GunSlot1():
 	StarterGun.global_position = %PlayerGuns.global_position
 	add_child(StarterGun)
 
+
 func GunSlot2():
 	var StarterGun = preload("res://gun.tscn").instantiate()
 	%PlayerGuns.progress_ratio = .2
 	StarterGun.global_position = %PlayerGuns.global_position
 	add_child(StarterGun)
+
 
 func GunSlot3():
 	var StarterGun = preload("res://gun.tscn").instantiate()
@@ -83,17 +72,17 @@ func GunSlot3():
 	StarterGun.global_position = %PlayerGuns.global_position
 	add_child(StarterGun)
 
+
 func GunSlot4():
 	var StarterGun = preload("res://gun.tscn").instantiate()
 	%PlayerGuns.progress_ratio = .6
 	StarterGun.global_position = %PlayerGuns.global_position
 	add_child(StarterGun)
 
+
 func GunSlot5():
 	var StarterGun = preload("res://gun.tscn").instantiate()
 	%PlayerGuns.progress_ratio = .8
 	StarterGun.global_position = %PlayerGuns.global_position
 	add_child(StarterGun)
-
-
 

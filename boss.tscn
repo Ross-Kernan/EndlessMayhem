@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://0bldvk83jdox"]
+
+[ext_resource type="Script" path="res://boss.gd" id="1_m8a3q"]
+[ext_resource type="Texture2D" uid="uid://wtwlarn10jvq" path="res://PixelPlat/Tiles/Characters/tile_0022.png" id="1_xthnf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5y8km"]
+size = Vector2(99, 59)
+
+[node name="Boss" type="CharacterBody2D"]
+light_mask = 2
+visibility_layer = 3
+z_index = 2
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_m8a3q")
+
+[node name="BigRobot" type="Sprite2D" parent="."]
+position = Vector2(0, 1.54972e-06)
+scale = Vector2(4.14583, 2.5)
+texture = ExtResource("1_xthnf")
+
+[node name="BossCollision" type="CollisionShape2D" parent="."]
+z_index = 2
+shape = SubResource("RectangleShape2D_5y8km")

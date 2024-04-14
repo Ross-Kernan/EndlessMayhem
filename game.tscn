@@ -143,5 +143,10 @@ position = Vector2(420, 479)
 wait_time = 0.3
 autostart = true
 
+[node name="BossTimer" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
 [connection signal="health_depleted" from="player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="MonsterSpawn" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="BossTimer" to="." method="_on_boss_timer_timeout"]

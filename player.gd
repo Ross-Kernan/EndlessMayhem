@@ -8,6 +8,7 @@ var DROPV = 1
 
 var MONEY = 0
 var SCORE = 0
+var ScoreReq = 20
 
 var SpeedCOST = 5
 var FireRCOST = 5
@@ -18,7 +19,6 @@ const HEALTH_REGEN = 1.0
 
 signal health_depleted
 
-@onready var gun = get_node("gun")
 
 
 func _ready():
@@ -36,7 +36,7 @@ func _physics_process(_delta):
 	%HealthBar.value = health
 	
 	if Input.is_action_just_pressed("+speed") && MONEY >= SpeedCOST:
-		SPEED += 20
+		SPEED += 15
 		MONEY -= SpeedCOST
 		SpeedCOST += int(SpeedCOST * .5)
 	elif Input.is_action_just_pressed("+fire_rate") && MONEY >= FireRCOST:

@@ -3,9 +3,7 @@ extends CharacterBody2D
 var health = 300
 
 @onready var player = get_node("/root/Game/player")
-@onready var mob = get_node("/root/Game/mob")
 
-signal boss_defeated
 
 
 func _physics_process(_delta):
@@ -21,10 +19,5 @@ func take_damage():
 	health -= 1
 	
 	if health == 0:
-		player.SCORE += 1
-		boss_defeated.emit()
+		player.SCORE += 30
 		queue_free()
-
-
-func _on_boss_defeated():
-	pass

@@ -98,7 +98,7 @@ offset_left = -914.0
 offset_top = -504.0
 offset_right = -824.0
 offset_bottom = -456.0
-text = "Money Label"
+text = "Label"
 
 [node name="Score" type="Label" parent="player"]
 unique_name_in_owner = true

@@ -5,7 +5,6 @@
 [sub_resource type="GDScript" id="GDScript_xpnty"]
 script/source = "extends Area2D
 
-@onready var player = get_node(\"/root/Game/player\")
 
 
 func increase_fire_rate():

@@ -4,11 +4,14 @@ var health = 3
 
 @onready var player = get_node("/root/Game/player")
 
-
 func _physics_process(_delta):
 	var direction = global_position.direction_to(player.global_position)
 	velocity = direction * 100.0
 	move_and_slide()
+	
+	if player.SCORE == player.ScoreReq:
+		health += 1
+		player.ScoreReq += player.ScoreReq * 2
 
 
 func drop_health():

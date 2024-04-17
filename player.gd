@@ -2,14 +2,23 @@ extends CharacterBody2D
 
 var MAX_HEALTH = 100.0
 var health = MAX_HEALTH
+
 var SPEED = 350
+var DROPV = 1
+
 var MONEY = 0
 var SCORE = 0
+
+var SpeedCOST = 5
+var FireRCOST = 5
+var DropCOST = 10
 
 const DAMAGE_RATE = 5.0
 const HEALTH_REGEN = 1.0
 
 signal health_depleted
+
+@onready var gun = get_node("gun")
 
 
 func _ready():
@@ -26,9 +35,17 @@ func _physics_process(_delta):
 	move_and_slide()
 	%HealthBar.value = health
 	
-	if Input.is_action_just_pressed("+speed") && MONEY >= 5:
-		SPEED += 10
-		MONEY -= 5
+	if Input.is_action_just_pressed("+speed") && MONEY >= SpeedCOST:
+		SPEED += 20
+		MONEY -= SpeedCOST
+		SpeedCOST += int(SpeedCOST * .5)
+	elif Input.is_action_just_pressed("+fire_rate") && MONEY >= FireRCOST:
+		MONEY -= FireRCOST
+		FireRCOST += int(FireRCOST * .5)
+	elif Input.is_action_just_pressed("+drop") && MONEY >= DropCOST:
+		DROPV += 1
+		MONEY -= DropCOST
+		DropCOST += DropCOST * 2
 	elif Input.is_action_just_pressed("+money"):
 		MONEY += 9999
 	

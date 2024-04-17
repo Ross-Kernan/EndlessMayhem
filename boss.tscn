@@ -15,6 +15,7 @@ collision_mask = 3
 script = ExtResource("1_m8a3q")
 
 [node name="BigRobot" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(0, 1.54972e-06)
 scale = Vector2(4.14583, 2.5)
 texture = ExtResource("1_xthnf")
@@ -22,3 +23,5 @@ texture = ExtResource("1_xthnf")
 [node name="BossCollision" type="CollisionShape2D" parent="."]
 z_index = 2
 shape = SubResource("RectangleShape2D_5y8km")
+
+[connection signal="boss_defeated" from="." to="." method="_on_boss_defeated"]

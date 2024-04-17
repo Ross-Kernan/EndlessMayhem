@@ -5,13 +5,12 @@
 [sub_resource type="GDScript" id="GDScript_xpnty"]
 script/source = "extends Area2D
 
-
 @onready var player = get_node(\"/root/Game/player\")
 
 
 func increase_fire_rate():
-	%FireRate.wait_time -= .005
-	player.MONEY -= 1
+	%FireRate.wait_time -= .01
+	# i think it does the calculation for the gun 5 times because ive spawned in the child 5 times
 
 
 func _physics_process(_delta):
@@ -20,7 +19,8 @@ func _physics_process(_delta):
 		var target_enemy = enemies_in_range[0]
 		look_at(target_enemy.global_position)
 		
-	if Input.is_action_just_pressed(\"+fire_rate\") && player.MONEY >= 5:
+		
+	if Input.is_action_just_pressed(\"+fire_rate\"):
 		increase_fire_rate()
 
 

@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://c8hdrf7k3vhhx"]
 
 [ext_resource type="Script" path="res://bullet.gd" id="1_dpdue"]
-[ext_resource type="Texture2D" uid="uid://dma0wt0m56wx0" path="res://ShapePeople/PNG/Default/green_body_circle.png" id="1_ujmjs"]
+[ext_resource type="Texture2D" uid="uid://y0u0eip84m5j" path="res://TestAssets/yellow_laser.png" id="2_i03aw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iphjw"]
-radius = 6.0
+radius = 4.0
 height = 36.0
 
 [node name="Bullet" type="Area2D"]
@@ -15,8 +15,9 @@ script = ExtResource("1_dpdue")
 
 [node name="Projectile" type="Sprite2D" parent="."]
 z_index = 2
-scale = Vector2(0.38125, 0.11875)
-texture = ExtResource("1_ujmjs")
+position = Vector2(7.45058e-07, 0)
+scale = Vector2(3, 1.42857)
+texture = ExtResource("2_i03aw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0

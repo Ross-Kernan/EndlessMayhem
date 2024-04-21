@@ -8,7 +8,7 @@ script/source = "extends Area2D
 
 
 func increase_fire_rate():
-	%FireRate.wait_time -= .01
+	%FireRate.wait_time -= .005
 	# i think it does the calculation for the gun 5 times because ive spawned in the child 5 times
 
 

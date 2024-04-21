@@ -21,7 +21,6 @@ func _physics_process(_delta):
 	
 	if player.SCORE == player.ScoreReq:
 		health += 1
-		player.ScoreReq += player.ScoreReq * 2
 
 
 func drop_health():

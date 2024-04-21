@@ -8,7 +8,7 @@ var DROPV = 1
 
 var MONEY = 0
 var SCORE = 0
-var ScoreReq = 20
+var ScoreReq = 50
 
 var SpeedCOST = 5
 var FireRCOST = 5

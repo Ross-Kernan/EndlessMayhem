@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://dhgu40tvm0vqw"]
+[gd_scene load_steps=12 format=3 uid="uid://dhgu40tvm0vqw"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_2omjp"]
 [ext_resource type="PackedScene" uid="uid://c1ituvdltnpth" path="res://player.tscn" id="1_d1l2k"]
-[ext_resource type="PackedScene" uid="uid://do2muqbuu3mpb" path="res://Tree.tscn" id="2_j3j0v"]
 [ext_resource type="PackedScene" uid="uid://eqder2m1ilbd" path="res://wall_lr.tscn" id="4_c3d5q"]
 [ext_resource type="PackedScene" uid="uid://bsiol33sehgh1" path="res://wall_tb.tscn" id="5_304eq"]
 [ext_resource type="Texture2D" uid="uid://c331dgqm3b2j7" path="res://PixelPlat/Tilemap/tilemap-backgrounds.png" id="6_ekpd6"]
@@ -128,25 +127,6 @@ collision_mask = 129
 position = Vector2(2245, -88)
 collision_layer = 129
 collision_mask = 129
-
-[node name="Tree" parent="." instance=ExtResource("2_j3j0v")]
-z_index = -1
-position = Vector2(246, 364)
-
-[node name="Tree2" parent="." instance=ExtResource("2_j3j0v")]
-z_index = -1
-position = Vector2(403, 168)
-
-[node name="Tree3" parent="." instance=ExtResource("2_j3j0v")]
-z_index = -1
-position = Vector2(821, 268)
-
-[node name="Tree4" parent="." instance=ExtResource("2_j3j0v")]
-position = Vector2(844, 476)
-
-[node name="Tree5" parent="." instance=ExtResource("2_j3j0v")]
-z_index = -1
-position = Vector2(420, 479)
 
 [node name="MonsterSpawn" type="Timer" parent="."]
 wait_time = 0.3

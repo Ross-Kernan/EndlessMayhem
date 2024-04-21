@@ -5,7 +5,7 @@ extends Node2D
 
 func _physics_process(_delta):
 	%Money.text = "Money: " + str(player.MONEY) + "\n----------------\nSpeed: " + str(player.SpeedCOST) + "\nFire Rate: " + str(player.FireRCOST) + "\nDrop Value: " + str(player.DropCOST)
-	%Score.text = "SCORE\n" + str(player.SCORE)
+	%Score.text = "SCORE\n" + str(player.SCORE) + "\n" + str(player.ScoreReq)
 
 func spawn_mob():
 	var robot = preload("res://mob.tscn").instantiate()

@@ -17,6 +17,7 @@ var DropCOST = 10
 const DAMAGE_RATE = 5.0
 const HEALTH_REGEN = 1.0
 
+
 signal health_depleted
 
 
@@ -36,7 +37,7 @@ func _physics_process(_delta):
 	%HealthBar.value = health
 	
 	if Input.is_action_just_pressed("+speed") && MONEY >= SpeedCOST:
-		SPEED += 15
+		SPEED += 10
 		MONEY -= SpeedCOST
 		SpeedCOST += int(SpeedCOST * .5)
 	elif Input.is_action_just_pressed("+fire_rate") && MONEY >= FireRCOST:

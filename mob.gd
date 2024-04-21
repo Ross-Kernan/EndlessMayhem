@@ -2,12 +2,22 @@ extends CharacterBody2D
 
 var health = 3
 
+var rand = randi_range(0, 4)
+
+var sprite_arr = ["res://PixelPlat/Tiles/Characters/Mobs/rob1.png",
+				"res://PixelPlat/Tiles/Characters/Mobs/rob2.png",
+				"res://PixelPlat/Tiles/Characters/Mobs/blocky.png",
+				"res://PixelPlat/Tiles/Characters/Mobs/demon1.png",
+				"res://PixelPlat/Tiles/Characters/Mobs/demon2.png"]
+
 @onready var player = get_node("/root/Game/player")
 
 func _physics_process(_delta):
+	%Robot.set_texture(load(sprite_arr[rand]))
 	var direction = global_position.direction_to(player.global_position)
 	velocity = direction * 100.0
 	move_and_slide()
+	
 	
 	if player.SCORE == player.ScoreReq:
 		health += 1

@@ -7,15 +7,13 @@
 radius = 36.1248
 
 [node name="Boss" type="CharacterBody2D"]
-light_mask = 2
-visibility_layer = 3
-z_index = 2
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_m8a3q")
 
 [node name="BigRobot" type="Sprite2D" parent="."]
 unique_name_in_owner = true
+z_index = -1
 scale = Vector2(3.53646, 3.29167)
 texture = ExtResource("2_txaeh")
 

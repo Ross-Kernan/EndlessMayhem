@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dafrwkbskdqmf"]
+[gd_scene load_steps=5 format=3 uid="uid://dafrwkbskdqmf"]
 
 [ext_resource type="Script" path="res://gameover.gd" id="1_vmke2"]
+[ext_resource type="Texture2D" uid="uid://b8514tipksqkd" path="res://PixelPlat/Tiles/Backgrounds/tile_0014.png" id="2_250nd"]
+[ext_resource type="FontFile" uid="uid://8h0b2pamy14p" path="res://TestAssets/VCR_OSD_MONO_1.001.ttf" id="2_lhd3c"]
+[ext_resource type="Texture2D" uid="uid://bgx08lvviycv8" path="res://PixelPlat/Tiles/tile_0000.png" id="3_jpwdq"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -17,58 +20,102 @@ script = ExtResource("1_vmke2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = -1
-anchor_right = 1.016
-anchor_bottom = 1.046
-offset_left = -18.0
-offset_top = -14.0
-offset_right = 269.568
-offset_bottom = 118.192
-color = Color(0.211765, 0.231373, 0.266667, 0.560784)
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -19.0
+offset_right = 6.0
+offset_bottom = -2.0
+texture = ExtResource("2_250nd")
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="GameOver" type="Label" parent="CanvasLayer"]
 anchors_preset = -1
-anchor_left = 0.257
-anchor_top = 0.051
-anchor_right = 0.746
-anchor_bottom = 0.287
-offset_left = -101.064
-offset_top = 43.952
-offset_right = 419.608
-offset_bottom = 164.024
+anchor_left = 0.228
+anchor_top = 0.15
+anchor_right = 0.781
+anchor_bottom = 0.348
+offset_left = 0.23996
+offset_right = 0.47998
+offset_bottom = -5.84003
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 0.713726)
+theme_override_fonts/font = ExtResource("2_lhd3c")
 theme_override_font_sizes/font_size = 200
 text = "Game Over"
 metadata/_edit_use_anchors_ = true
 
-[node name="Restart" type="Button" parent="CanvasLayer"]
+[node name="RestartButton" type="Button" parent="CanvasLayer"]
 anchors_preset = -1
-anchor_left = 0.122
-anchor_top = 0.54
-anchor_right = 0.406
+anchor_left = 0.186
+anchor_top = 0.494
+anchor_right = 0.385
 anchor_bottom = 0.843
-offset_left = -0.544006
-offset_top = 0.0799866
-offset_right = 0.287964
-offset_bottom = 5.73596
+offset_left = 0.880005
+offset_top = 0.47998
+offset_right = -0.200012
+offset_bottom = -2.44
+theme_override_fonts/font = ExtResource("2_lhd3c")
 theme_override_font_sizes/font_size = 30
-text = "Restart"
+text = "
+"
+icon = ExtResource("3_jpwdq")
+flat = true
+expand_icon = true
 
-[node name="Quit" type="Button" parent="CanvasLayer"]
+[node name="RestartLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = -1
-anchor_left = 0.605
-anchor_top = 0.546
-anchor_right = 0.904
-anchor_bottom = 0.855
-offset_left = 0.039978
-offset_top = 0.191986
-offset_right = -0.408081
-offset_bottom = -0.0400391
+anchor_left = 0.198
+anchor_top = 0.581
+anchor_right = 0.326
+anchor_bottom = 0.811
+offset_left = 42.84
+offset_top = -44.48
+offset_right = 33.08
+offset_bottom = -191.88
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_lhd3c")
+theme_override_font_sizes/font_size = 100
+text = "Play
+"
+
+[node name="QuitButton" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.606
+anchor_top = 0.506
+anchor_right = 0.804
+anchor_bottom = 0.852
+offset_left = -8.52002
+offset_top = -5.48004
+offset_right = -7.68005
+offset_bottom = -5.16003
+theme_override_fonts/font = ExtResource("2_lhd3c")
 theme_override_font_sizes/font_size = 30
-text = "Quit"
+text = "
+"
+icon = ExtResource("3_jpwdq")
+flat = true
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="CanvasLayer/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="CanvasLayer/Quit" to="." method="_on_quit_pressed"]
+[node name="QuitLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.607
+anchor_top = 0.527
+anchor_right = 0.791
+anchor_bottom = 0.835
+offset_left = 57.5599
+offset_top = 15.84
+offset_right = -59.72
+offset_bottom = -215.8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_lhd3c")
+theme_override_font_sizes/font_size = 100
+text = "Quit"
+vertical_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/RestartButton" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="CanvasLayer/QuitButton" to="." method="_on_quit_pressed"]

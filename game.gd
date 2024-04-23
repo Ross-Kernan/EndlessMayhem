@@ -5,7 +5,7 @@ extends Node2D
 
 func _physics_process(_delta):
 	%Money.text = "Money: " + str(player.MONEY) + "\n----------------\nSpeed: " + str(player.SpeedCOST) + "\nFire Rate: " + str(player.FireRCOST) + "\nDrop Value: " + str(player.DropCOST)
-	%Score.text = "SCORE\n" + str(player.SCORE) + "\n" + str(player.ScoreReq)
+	%Score.text = "SCORE" + "\n-------\n" + str(player.SCORE) #+ "\n" + str(player.ScoreReq)
 	
 	if player.SCORE == player.ScoreReq:
 		%MonsterSpawn.wait_time -= .01

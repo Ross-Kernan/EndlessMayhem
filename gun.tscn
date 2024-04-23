@@ -11,6 +11,7 @@ func increase_fire_rate():
 	%FireRate.wait_time -= .005
 	# i think it does the calculation for the gun 5 times because ive spawned it in 5 times
 
+@onready var player = get_node(\"/root/Game/player\")
 
 func _physics_process(_delta):
 	var enemies_in_range = get_overlapping_bodies()
@@ -19,7 +20,7 @@ func _physics_process(_delta):
 		look_at(target_enemy.global_position)
 		
 		
-	if Input.is_action_just_pressed(\"+fire_rate\"):
+	if Input.is_action_just_pressed(\"+fire_rate\") && player.MONEY >= player.FireRCOST:
 		increase_fire_rate()
 
 

@@ -94,23 +94,27 @@ position = Vector2(1029, 336)
 
 [node name="Money" type="Label" parent="player"]
 unique_name_in_owner = true
-offset_left = -914.0
-offset_top = -504.0
-offset_right = -824.0
-offset_bottom = -456.0
+offset_left = -576.0
+offset_top = -325.0
+offset_right = -472.0
+offset_bottom = -277.0
 theme_override_fonts/font = ExtResource("6_8y0p2")
 text = "Money Label"
+metadata/_edit_use_anchors_ = true
 
 [node name="Score" type="Label" parent="player"]
 unique_name_in_owner = true
+layout_direction = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 850.0
-offset_top = -504.0
-offset_right = 954.0
-offset_bottom = -481.0
+offset_left = 472.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = -301.0
 grow_horizontal = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("6_8y0p2")
 text = "Score Label
 "

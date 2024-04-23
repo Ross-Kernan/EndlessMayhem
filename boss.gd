@@ -8,7 +8,7 @@ var BOSS_SPEED = 100
 
 
 func _physics_process(_delta):
-	%BigRobot.set_texture(load("res://PixelPlat/Tiles/Characters/tile_0008.png"))
+	#%BigRobot.set_texture(load("res://PixelPlat/Tiles/Characters/tile_0008.png"))
 	var direction = global_position.direction_to(player.global_position)
 	velocity = direction * BOSS_SPEED
 	move_and_slide()

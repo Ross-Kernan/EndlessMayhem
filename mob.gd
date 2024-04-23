@@ -28,6 +28,7 @@ func drop_health():
 	var health_drop = HDROP.instantiate()
 	get_parent().call_deferred("add_child", health_drop)
 	health_drop.global_position = position
+	# These were originally intended to be health drops but now its money cause thats more interesting
 
 func take_damage():
 	health -= 1

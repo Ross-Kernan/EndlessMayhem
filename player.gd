@@ -71,36 +71,36 @@ func _on_timer_timeout():
 
 
 func GunSlot1():
-	var StarterGun = preload("res://gun.tscn").instantiate()
+	var Gun1 = preload("res://gun.tscn").instantiate()
 	%PlayerGuns.progress_ratio = 0
-	StarterGun.global_position = %PlayerGuns.global_position
-	add_child(StarterGun)
+	Gun1.global_position = %PlayerGuns.global_position
+	add_child(Gun1)
 
 
 func GunSlot2():
-	var StarterGun = preload("res://gun.tscn").instantiate()
+	var Gun2 = preload("res://gun.tscn").instantiate()
 	%PlayerGuns.progress_ratio = .2
-	StarterGun.global_position = %PlayerGuns.global_position
-	add_child(StarterGun)
+	Gun2.global_position = %PlayerGuns.global_position
+	add_child(Gun2)
 
 
 func GunSlot3():
-	var StarterGun = preload("res://gun.tscn").instantiate()
+	var Gun3 = preload("res://gun.tscn").instantiate()
 	%PlayerGuns.progress_ratio = .4
-	StarterGun.global_position = %PlayerGuns.global_position
-	add_child(StarterGun)
+	Gun3.global_position = %PlayerGuns.global_position
+	add_child(Gun3)
 
 
 func GunSlot4():
-	var StarterGun = preload("res://gun.tscn").instantiate()
+	var Gun4 = preload("res://gun.tscn").instantiate()
 	%PlayerGuns.progress_ratio = .6
-	StarterGun.global_position = %PlayerGuns.global_position
-	add_child(StarterGun)
+	Gun4.global_position = %PlayerGuns.global_position
+	add_child(Gun4)
 
 
 func GunSlot5():
-	var StarterGun = preload("res://gun.tscn").instantiate()
+	var Gun5 = preload("res://gun.tscn").instantiate()
 	%PlayerGuns.progress_ratio = .8
-	StarterGun.global_position = %PlayerGuns.global_position
-	add_child(StarterGun)
+	Gun5.global_position = %PlayerGuns.global_position
+	add_child(Gun5)
 

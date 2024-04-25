@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var player = get_node("/root/Game/player")
 
-
 func _physics_process(_delta):
 	%Money.text = "Money: " + str(player.MONEY) + "\n----------------\nSpeed: " + str(player.SpeedCOST) + "\nFire Rate: " + str(player.FireRCOST) + "\nDrop Value: " + str(player.DropCOST)
 	%Score.text = "SCORE" + "\n-------\n" + str(player.SCORE) #+ "\n" + str(player.ScoreReq)

@@ -41,6 +41,9 @@ func _physics_process(_delta):
 		MONEY -= SpeedCOST
 		SpeedCOST += int(SpeedCOST * .5)
 	elif Input.is_action_just_pressed("+fire_rate") && MONEY >= FireRCOST:
+		# The actual fire rate is increased in the guns script because i could not figure it out
+		# it also runs 5 times because the gun is instantiated 5 times, it works so just divide the upgrade
+		# multiplier by 5
 		MONEY -= FireRCOST
 		FireRCOST += int(FireRCOST * .5)
 	elif Input.is_action_just_pressed("+drop") && MONEY >= DropCOST:
@@ -57,18 +60,14 @@ func _physics_process(_delta):
 		if health <= 0.0:
 			health_depleted.emit()
 
-
 func health_regen():
 	if health < MAX_HEALTH:
 		health += HEALTH_REGEN
 	elif health > MAX_HEALTH:
 		health = MAX_HEALTH
 
-
 func _on_timer_timeout():
 	health_regen()
-	
-
 
 func GunSlot1():
 	var Gun1 = preload("res://gun.tscn").instantiate()
@@ -103,4 +102,3 @@ func GunSlot5():
 	%PlayerGuns.progress_ratio = .8
 	Gun5.global_position = %PlayerGuns.global_position
 	add_child(Gun5)
-

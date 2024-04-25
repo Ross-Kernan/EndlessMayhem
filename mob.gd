@@ -18,10 +18,8 @@ func _physics_process(_delta):
 	velocity = direction * 100.0
 	move_and_slide()
 	
-	
 	if player.SCORE == player.ScoreReq:
 		health += 1
-
 
 func drop_health():
 	const HDROP = preload("res://health_pickup.tscn")
